@@ -1,10 +1,28 @@
+// SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.9.0;
 
 contract Election {
-    string public candidate;
-
-    function Election() public {
-        candidate = "Candidate 1";
+    // Model of Candidate
+    struct Candidate {
+        uint id;
+        string name;
+        uint voteCount;
     }
-    //min 24
+
+    // Store Candidates
+    // Fetch Candidates
+    mapping(uint => Candidate) public candidates;
+
+    // Store Candidates Count
+    uint public candidatesCount;
+
+    constructor() public {
+      addCandidate("Candidate 1");
+      addCandidate("Candidate 2");
+    }
+    
+    function addCandidate(string memory _name) private {
+        candidatesCount ++;
+        candidates[candidatesCount] = Candidate(candidatesCount, _name, 0);
+    }
 }
