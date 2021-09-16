@@ -1,4 +1,4 @@
-# Blockchain Election
+# Decentralized Election
 
 ## Dependencies
 Install these prerequisites to follow along with the tutorial. See free video tutorial or a full explanation of each prerequisite.
